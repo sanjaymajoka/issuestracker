@@ -8,10 +8,13 @@
     <string name="not_comments">No Comments</string>
     <string name="no_comment_message">Comments for this issue is not available.</string>
     <string name="ok">OK</string>
-    <string name="network_error_message">Please check your network connection</string>
+    <string name="network_error_message">Please check your internet connection</string>
     <string name="demo_text">- simplified `GDTCOREvent.eventID` generating logic. There were a couple issues uncovered with the previously implemented logic such as blocking a `[GDTCOREvent init..]` caller thread, implicit dependency of the data object on a storage instance and a couple of unhandled error cases that may lead to generating the same IDs which will cause overriding old events. Fixing these issues leads to increasing of the implementation complexity even more. I propose to use the simplified version of the ID generation logic at least temporary to mitigate the release risks of already major and potentially risky changes. I could not find `eventID` to be sent to the server, so I assume we can postpone implementing the incrementally growing eventIDs until it is supported and required.r - FIRCoreDiagnosticsTests fixed.r r #no-changelog Changelog is still relevant.</string>
     <string name="user_name_with_time">Opened on %s by %s</string>
     <string name="commented_on">Commented on %s</string>
     <string name="detail">Detail</string>
     <string name="view_more"><u>View More</u></string>
+
+    <string name="network_error">Network Error</string>
+
 </resources>

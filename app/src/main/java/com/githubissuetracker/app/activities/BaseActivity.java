@@ -1,5 +1,7 @@
 package com.githubissuetracker.app.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +47,19 @@ abstract class BaseActivity<V extends BaseViewModel> extends AppCompatActivity {
                 showToast(message);
             }
         });
+
+        viewModel.getLdNetworkDialog().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    showNetworkAlert();
+                } else {
+                    if (alertDialog != null && alertDialog.isShowing()) {
+                        alertDialog.dismiss();
+                    }
+                }
+            }
+        });
     }
 
     public void showToast(String message) {
@@ -68,4 +83,21 @@ abstract class BaseActivity<V extends BaseViewModel> extends AppCompatActivity {
             loaderView.setVisibility(View.GONE);
         }
     }
+
+    private AlertDialog alertDialog;
+
+    private void showNetworkAlert() {
+        alertDialog = new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.network_error))
+                .setMessage(getString(R.string.network_error_message))
+                .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        alertDialog.dismiss();
+                        BaseActivity.this.finish();
+                    }
+                })
+                .show();
+    }
+
 }

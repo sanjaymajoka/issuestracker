@@ -27,16 +27,10 @@ public class IssuesListActivity extends ToolBarActivity<IssuesListViewModel> imp
         setContentView(R.layout.activity_issues_list);
         initObserver(viewModel);
         initView();
-        loadIssues();
+        viewModel.loadIssues();
     }
 
-    private void loadIssues() {
-        if (Utils.isNetworkConnectionAvailable(this)) {
-            viewModel.loadIssues();
-        } else {
-            viewModel.loadFromDb();
-        }
-    }
+
 
     private void initView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -80,4 +74,5 @@ public class IssuesListActivity extends ToolBarActivity<IssuesListViewModel> imp
             showToast(getString(R.string.network_error_message));
         }
     }
+
 }
