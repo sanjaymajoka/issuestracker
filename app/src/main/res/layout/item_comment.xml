@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/user_bg"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                tools:text="User Name" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:textColor="@color/text_color"
+                tools:text="cyrusamirabadi I try to use the app not work the master!!" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtCommentedOn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:textSize="@dimen/_10ssp"
+                tools:text="@string/commented_on"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
